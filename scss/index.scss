@@ -1,0 +1,56 @@
+@import "foundation/normalize";
+@import "foundation/components/grid";
+
+html {
+  font-size: 12px;
+}
+
+main {
+  height: 100%;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  .wall {
+    flex: 1;
+    width: 100%;
+    background-color: lightgrey;
+    opacity: 0.75;
+    z-index: 50;
+
+    &:first-child {
+      align-self: flex-start;
+      border-bottom: 2rem solid #808080;
+    }
+    &.window {
+      flex: 4;
+      align-self: center;
+      background-color: transparent;
+      border-top: 0.5rem solid #696969;
+      border-bottom: 0.5rem solid #696969;
+      max-height: 1%;
+    }
+    &:last-child {
+      align-self: flex-end;
+      border-top: 2rem solid #808080;
+    }
+    .begin {
+      i {
+        margin: 1rem;
+        font-size: 2rem;
+      }
+    }
+  }
+
+  .backdrop {
+    flex: 0;
+    z-index: 40;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: cornflowerblue;
+    opacity: 0.5;
+  }
+}
