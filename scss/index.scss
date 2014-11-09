@@ -1,6 +1,13 @@
 @import "foundation/normalize";
 @import "foundation/components/grid";
 
+$main-border-width: 2rem;
+$minor-border-width: 0.5rem;
+
+$lock-diameter: 25rem;
+$lock-window-diameter: $lock-diameter + ($main-border-width * 2);
+$clasp-window-diameter: $lock-window-diameter + ($minor-border-width * 2);
+
 html {
   font-size: 12px;
 }
@@ -15,7 +22,6 @@ main {
     flex: 1;
     width: 100%;
     background-color: lightgrey;
-    opacity: 0.75;
     z-index: 50;
 
     &:first-child {
@@ -25,19 +31,62 @@ main {
     &.window {
       flex: 4;
       align-self: center;
+
+      position: relative;
+
       background-color: transparent;
       border-top: 0.5rem solid #696969;
       border-bottom: 0.5rem solid #696969;
-      max-height: 1%;
+      max-height: 5%;
     }
     &:last-child {
       align-self: flex-end;
       border-top: 2rem solid #808080;
     }
-    .begin {
+    .power {
+      margin-top: 8rem;
+
       i {
-        margin: 1rem;
-        font-size: 2rem;
+        font-size: 5rem;
+        color: #333333;
+      }
+    }
+
+    .lock {
+      z-index: 60;
+      width: $lock-diameter;
+      height: $lock-diameter / 2;
+      margin-top: -($lock-diameter / 2);
+      margin-left: auto;
+      margin-right: auto;
+      background-color: lightgrey;
+      border-top-left-radius: $lock-diameter;
+      border-top-right-radius: $lock-diameter;
+
+      display: flex;
+      justify-content: center;
+    }
+
+    &.window .lock {
+      position: absolute;
+      background-color: #808080;
+      width: $lock-window-diameter;
+      height: $lock-window-diameter / 2;
+      bottom: -($main-border-width + $minor-border-width);
+      border-top-right-radius: $lock-window-diameter;
+      border-top-left-radius: $lock-window-diameter;
+
+      left: 50%;
+      margin-left: -($lock-window-diameter / 2);
+
+      &.clasp {
+        background-color: #696969;
+        bottom: -($main-border-width + $minor-border-width);
+        width: $clasp-window-diameter;
+        height: $clasp-window-diameter / 2;
+        border-top-right-radius: $clasp-window-diameter;
+        border-top-left-radius: $clasp-window-diameter;
+        margin-left: -($clasp-window-diameter / 2);
       }
     }
   }
@@ -50,7 +99,6 @@ main {
     bottom: 0;
     left: 0;
     right: 0;
-    background-color: cornflowerblue;
-    opacity: 0.5;
+    background-color: rgba(100,149,237,0.5);
   }
 }
