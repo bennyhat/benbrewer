@@ -37,7 +37,7 @@ main {
       background-color: transparent;
       border-top: 0.5rem solid #696969;
       border-bottom: 0.5rem solid #696969;
-      max-height: 5%;
+      max-height: 75%;
     }
     &:last-child {
       align-self: flex-end;
@@ -99,6 +99,13 @@ main {
     bottom: 0;
     left: 0;
     right: 0;
-    background-color: rgba(100,149,237,0.5);
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+
+    &, canvas {
+      box-sizing: border-box;
+    }
+    //    background-color: rgba(100, 149, 237, 0.5);
   }
 }
