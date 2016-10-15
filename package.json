@@ -9,6 +9,7 @@
   },
   "devDependencies": {
     "chai": "^3.5.0",
+    "cpx": "^1.5.0",
     "fs-extra": "^0.30.0",
     "karma": "^1.3.0",
     "karma-chai": "^0.1.0",
@@ -27,6 +28,7 @@
     "build": "npm run bundle-js",
     "bundle-js": "riot src/tag/ build/js/riot-bundle.js",
     "copy-imgs": "cpx src/img/* build/img",
+    "copy-data": "cpx src/data/* build/data",
     "copy-mixins": "cpx src/mixins/* build/js/mixins"
   },
   "repository": {
