@@ -1,8 +1,14 @@
 <html>
 <head>
     <meta charset="utf-8">
+    <script src="./node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="./node_modules/riot/riot+compiler.min.js"></script>
+    <script src="./build/js/riot-bundle.js"></script>
 </head>
 <body>
-<script type="text/javascript" src="bundle.js" charset="utf-8"></script>
+<todo-list></todo-list>
+<script>
+    riot.mount('*');
+</script>
 </body>
 </html>

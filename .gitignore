@@ -29,6 +29,6 @@ node_modules
 
 # Custom
 .idea
-bundle.js
+build/
 
 
