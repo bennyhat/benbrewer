@@ -29,9 +29,6 @@ node_modules
 
 # Custom
 .idea
-css
-js/models.js
-js/views.js
-js/controllers.js
-js/services.js
-js/templates.js
+bundle.js
+
+

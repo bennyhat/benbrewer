@@ -1,66 +1,8 @@
-<!doctype html>
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Ben Brewer</title>
-
-    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/index.css">
-
-    <script src="js/libs/modernizr.js"></script>
-    <script id="shader-fs" type="x-shader/x-fragment">
-    #ifdef GL_ES
-        precision highp float;
-    #endif
-
-    void main(void) {
-        gl_FragColor = vec4(1.0, 1.0, 1.0, 1.0);
-    }
-    </script>
-
-    <script id="shader-vs" type="x-shader/x-vertex">
-    attribute vec3 aVertexPosition;
-
-    uniform mat4 uMVMatrix;
-    uniform mat4 uPMatrix;
-
-    void main(void) {
-        gl_Position = uPMatrix * uMVMatrix * vec4(aVertexPosition, 1.0);
-    }
-
-    </script>
 </head>
 <body>
-<header>
-
-</header>
-<main>
-    <div class="wall">
-    </div>
-    <div class="wall window">
-        <div class="lock clasp">
-        </div>
-        <div class="lock">
-        </div>
-    </div>
-    <canvas id="viewport" class="backdrop">
-    </canvas>
-    <div class="wall">
-        <div class="lock">
-            <!--<div class="power">-->
-            <!--<i class="fa fa-play"></i>-->
-            <!--</div>-->
-        </div>
-    </div>
-</main>
-<footer>
-</footer>
-
-<script src="js/libs/jquery-1.10.2.min.js"></script>
-<script src="js/libs/handlebars-v1.3.0.js"></script>
-<script src="js/libs/ember.js"></script>
-<script src="js/libs/ember-data.js"></script>
-<script src="js/libs/PhiloGL.js"></script>
-<script src="js/application.js"></script>
+<script type="text/javascript" src="bundle.js" charset="utf-8"></script>
 </body>
 </html>

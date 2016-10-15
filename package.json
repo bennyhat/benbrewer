@@ -1,10 +1,28 @@
 {
-    "name": "benbrewer.me",
-    "version": "0.0.1",
-    "dependencies": {
-        "gulp": "3.8.10",
-        "gulp-sass": "1.1.0",
-        "gulp-concat": "2.4.1",
-        "gulp-ember-templates": "0.5.2"
-    }
+  "name": "benbrewer",
+  "version": "1.0.0",
+  "description": "Ben Brewer personal site",
+  "main": "index.html",
+  "dependencies": {
+    "css-loader": "^0.25.0",
+    "style-loader": "^0.13.1"
+  },
+  "devDependencies": {
+    "css-loader": "^0.25.0",
+    "style-loader": "^0.13.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack --progress --colors --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bennyhat/benbrewer.git"
+  },
+  "author": "Ben Brewer",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bennyhat/benbrewer/issues"
+  },
+  "homepage": "https://github.com/bennyhat/benbrewer#readme"
 }
