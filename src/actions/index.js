@@ -1,3 +1,4 @@
 import clickAction from "./click"
+import inputAction from "./input"
 
-export { clickAction }
+export { clickAction, inputAction }
