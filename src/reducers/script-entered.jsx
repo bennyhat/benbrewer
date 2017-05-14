@@ -16,13 +16,13 @@ const scriptEnteredReducer = (state, action) => {
   let updatedState = {};
   if (scriptStillOpen(input)) {
     updatedState = Object.assign({}, state, {
-      newInputPresent: false
+      inputParseable: false
     });
   }
   else {
     updatedState = Object.assign({}, state, {
       inputHistory: state.inputHistory.concat(input),
-      newInputPresent: true
+      inputParseable: true
     });
   }
   return updatedState;

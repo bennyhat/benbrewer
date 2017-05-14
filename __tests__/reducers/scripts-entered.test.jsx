@@ -4,7 +4,7 @@ import scriptEnteredReducer from "../../src/reducers/script-entered.jsx";
 describe('ScriptEnteredReducer', () => {
   let state = {
     inputHistory: ['something there already'],
-    newInputPresent: false
+    inputParseable: false
   };
 
   describe('given a simple script', () => {
@@ -19,7 +19,7 @@ describe('ScriptEnteredReducer', () => {
           'something there already',
           'simple script'
         ],
-        newInputPresent: true
+        inputParseable: true
       });
     });
   });
@@ -34,7 +34,7 @@ describe('ScriptEnteredReducer', () => {
         inputHistory: [
           'something there already'
         ],
-        newInputPresent: false
+        inputParseable: false
       });
     });
   });
@@ -49,7 +49,7 @@ describe('ScriptEnteredReducer', () => {
         inputHistory: [
           'something there already'
         ],
-        newInputPresent: false
+        inputParseable: false
       });
     });
   });
@@ -64,7 +64,7 @@ describe('ScriptEnteredReducer', () => {
         inputHistory: [
           'something there already'
         ],
-        newInputPresent: false
+        inputParseable: false
       });
     });
   });
@@ -80,7 +80,7 @@ describe('ScriptEnteredReducer', () => {
           'something there already',
           'simple script\\\\\\"' // this is really simple script\\\"
         ],
-        newInputPresent: true
+        inputParseable: true
       });
     });
   });
@@ -96,7 +96,7 @@ describe('ScriptEnteredReducer', () => {
           'something there already',
           "simple script\\\\\\'" // this is really simple script\\\'
         ],
-        newInputPresent: true
+        inputParseable: true
       });
     });
   });
@@ -112,7 +112,7 @@ describe('ScriptEnteredReducer', () => {
           'something there already',
           "simple script\\\\" // this is really simple script\\
         ],
-        newInputPresent: true
+        inputParseable: true
       });
     });
   });
@@ -127,7 +127,7 @@ describe('ScriptEnteredReducer', () => {
         inputHistory: [
           'something there already'
         ],
-        newInputPresent: false
+        inputParseable: false
       });
     });
   });
@@ -142,7 +142,7 @@ describe('ScriptEnteredReducer', () => {
         inputHistory: [
           'something there already'
         ],
-        newInputPresent: false
+        inputParseable: false
       });
     });
   });
@@ -157,7 +157,7 @@ describe('ScriptEnteredReducer', () => {
         inputHistory: [
           'something there already'
         ],
-        newInputPresent: false
+        inputParseable: false
       });
     });
   });
@@ -172,7 +172,7 @@ describe('ScriptEnteredReducer', () => {
         inputHistory: [
           'something there already'
         ],
-        newInputPresent: false
+        inputParseable: false
       });
     });
   });
@@ -188,7 +188,7 @@ describe('ScriptEnteredReducer', () => {
           'something there already',
           'simple script\\\nnext line'
         ],
-        newInputPresent: true
+        inputParseable: true
       });
     });
   });
