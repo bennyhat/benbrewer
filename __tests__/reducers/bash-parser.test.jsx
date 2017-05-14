@@ -2,17 +2,17 @@ jest.mock('bash-parser');
 const bashParser = require('bash-parser');
 
 import {inputAction} from "../../src/actions";
-import bashParseReducer from "../../src/reducers/bash-parse.jsx";
+import bashParserReducer from "../../src/reducers/bash-parser.jsx";
 
-describe('BashParseReducer', () => {
+describe('BashParserReducer', () => {
   let state = {
     inputHistory: ['a simple\nmultiline script'],
     inputParseable: true,
-    parseOutput: {},
-    parseOutputInterpretable: false
+    parserOutput: {},
+    parserOutputInterpretable: false
   };
 
-  let expectedParseOutput = {
+  let expectedParserOutput = {
     type: "Script",
     commands: [
       {
@@ -46,33 +46,33 @@ describe('BashParseReducer', () => {
 
   beforeEach(() => {
     bashParser.mockClear();
-    bashParser.mockImplementation(() => expectedParseOutput);
+    bashParser.mockImplementation(() => expectedParserOutput);
   });
 
   describe('given an input history, with new input present', () => {
     let newState = {};
 
     beforeEach(() => {
-      newState = bashParseReducer(state, inputAction('does not matter'));
+      newState = bashParserReducer(state, inputAction('does not matter'));
     });
     it('calls the bash parser and returns whatever AST json that provides', () => {
-      expect(newState.parseOutput).toEqual(expectedParseOutput);
+      expect(newState.parserOutput).toEqual(expectedParserOutput);
     });
     it('marks the parse output as interpretable', () => {
-      expect(newState.parseOutputInterpretable).toEqual(true);
+      expect(newState.parserOutputInterpretable).toEqual(true);
     });
   });
   describe('given an input history, with but no new input marked', () => {
     const originalState = {
       inputHistory: ['a simple\nmultiline script'],
       inputParseable: false,
-      parseOutput: {},
-      parseOutputInterpretable: false,
+      parserOutput: {},
+      parserOutputInterpretable: false,
     };
     let newState = {};
 
     beforeEach(() => {
-      newState = bashParseReducer(originalState, inputAction('does not matter'));
+      newState = bashParserReducer(originalState, inputAction('does not matter'));
     });
     it('does not set any new parse output', () => {
       expect(newState).toEqual(originalState);
